@@ -1,4 +1,3 @@
-<!-- Transit Helper Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +10,8 @@
   <nav class="bg-white shadow flex justify-between items-center px-6 py-4">
     <div class="text-xl font-bold text-green-700">🌆 Civix</div>
     <div class="space-x-4">
-      <a href="#" class="text-gray-700 hover:underline">Dashboard</a>
-      <a href="#" class="text-gray-700 hover:underline">Report Issue</a>
+      <a href="index.html" class="text-gray-700 hover:underline">Dashboard</a>
+      <a href="report.html" class="text-gray-700 hover:underline">Report Issue</a>
       <a href="#" class="bg-blue-100 text-blue-700 px-3 py-1 rounded">Transit Helper</a>
       <a href="environment.html" class="text-gray-700 hover:underline">Environment</a>
       <a href="impact.html" class="text-gray-700 hover:underline">My Impact</a>
@@ -24,10 +23,15 @@
     <p class="text-gray-600 mb-6">Find the most sustainable way to get around the city and earn impact points for eco-friendly choices.</p>
 
     <div class="flex space-x-4 mb-4">
-      <input type="text" placeholder="Starting location" class="w-1/2 px-4 py-2 border rounded" />
-      <input type="text" placeholder="Destination" class="w-1/2 px-4 py-2 border rounded" />
+      <input id="start" type="text" placeholder="Starting location" class="w-1/2 px-4 py-2 border rounded" />
+      <input id="end" type="text" placeholder="Destination" class="w-1/2 px-4 py-2 border rounded" />
     </div>
-    <button class="bg-blue-500 text-white px-6 py-2 rounded">🚍 Find Routes</button>
+    <button id="findRoute" class="bg-blue-500 text-white px-6 py-2 rounded">🚍 Find Routes</button>
+
+    <div id="routeResult" class="mt-6 p-4 bg-green-50 text-green-800 rounded hidden">
+      <h4 class="font-semibold mb-2">Suggested Route:</h4>
+      <p class="text-sm">Take the metro from <span id="startLocation"></span> to <span id="endLocation"></span>. Walking and cycling options also available!</p>
+    </div>
 
     <div class="mt-6 p-4 bg-green-50 text-green-800 rounded">
       <h4 class="font-semibold mb-2">♻️ Sustainability Tips:</h4>
@@ -43,7 +47,19 @@
   <footer class="bg-gray-800 text-white text-center py-4 mt-12">
     © 2025 Civix. Building smarter cities together.
   </footer>
+
+  <script>
+    document.getElementById('findRoute').addEventListener('click', function() {
+      const start = document.getElementById('start').value.trim();
+      const end = document.getElementById('end').value.trim();
+      if (start && end) {
+        document.getElementById('startLocation').textContent = start;
+        document.getElementById('endLocation').textContent = end;
+        document.getElementById('routeResult').classList.remove('hidden');
+      } else {
+        alert('Please enter both a starting location and destination!');
+      }
+    });
+  </script>
 </body>
 </html>
-
-
