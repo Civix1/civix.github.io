@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Civix - Smarter Cities Start Here</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+    <div class="text-xl font-bold text-green-600">Civix</div>
+    <div class="space-x-4">
+      <a href="index.html" class="text-blue-600 font-semibold">Dashboard</a>
+      <a href="report.html" class="hover:text-blue-600">Report Issue</a>
+      <a href="transit.html" class="hover:text-blue-600">Transit Helper</a>
+      <a href="environment.html" class="hover:text-blue-600">Environment</a>
+      <a href="impact.html" class="hover:text-blue-600">My Impact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-500 to-green-400 text-white text-center p-10">
+    <h1 class="text-3xl font-bold">Welcome to Civix</h1>
+    <p class="mt-2">Your gateway to smarter city living. Report issues, track sustainability, and make a real impact on your community.</p>
+    <a href="report.html" class="mt-4 inline-block bg-white text-blue-600 px-4 py-2 rounded shadow font-semibold">Report an Issue Now</a>
+  </section>
+
+  <!-- Dashboard Tiles -->
+  <section class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="bg-white p-4 rounded shadow text-center">
+      <h2 class="text-lg font-bold">Issues Reported</h2>
+      <p class="text-2xl font-semibold" id="issues-count">--</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow text-center">
+      <h2 class="text-lg font-bold">Active Users</h2>
+      <p class="text-2xl font-semibold" id="active-users">--</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow text-center">
+      <h2 class="text-lg font-bold">Air Quality (AQI)</h2>
+      <p class="text-2xl font-semibold" id="aqi">--</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow text-center">
+      <h2 class="text-lg font-bold">CO₂ Saved</h2>
+      <p class="text-2xl font-semibold" id="co2-saved">--</p>
+    </div>
+  </section>
+
+  <!-- Recent Activity -->
+  <section class="p-6">
+    <h2 class="text-xl font-bold mb-4">Recent City Activity</h2>
+    <ul class="space-y-2" id="activity-feed">
+      <li class="bg-white p-4 rounded shadow">Loading recent activity...</li>
+    </ul>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
 
